@@ -1,0 +1,87 @@
+<!-- display: none; => xóa lun phần tử
+visibility: hidden; => ẩn phần tử khỏi trang web, không chiếm trên không gian
+opacity: 0 => ẩn phần tử, 1 => hiển thị rõ phần tử -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .box1, .box2 /*css slector*/ 
+            /* background-color: orange;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+        }
+        h1#id1 {
+            color: red;
+        } */ 
+        /* .parent p => thẻ con p của .parent
+        .parent > p => thẻ con trực tiếp của .parent */
+        /* .parent + p {
+            color: green;
+        } */
+        /* .parent ~ p => tất cả thẻ p phía sau .parent */
+        .box1 {
+            width: 250px;
+            height: 250px;
+            border: 5px solid black;
+            margin: 10px;
+        }
+        .image {
+            width: 100%;
+            height: 100%;
+        }
+        .fill {
+            object-fit: fill; /*=> lấp đầy, có thể méo */
+        }
+        .contain {
+            object-fit: contain;
+        }
+        .cover {
+            object-fit: cover;
+        }
+        /*box sizing */
+        /* content box: là width + 2padding + 2border
+        border box: là width - 2padding - 2border => thường sài để ko bị bể form */
+        .box {
+            width: 200px;
+            height: 200px;
+            box-sizing: border-box;
+            padding: 20px;
+            border: 5px solid black;
+            color: blue;
+            box-shadow: 10px 0px 100px black;
+            background-image: url("profile-image.jpg");
+            background-size: cover;
+            background-repeat: repeat;
+            background-position: /*center*/ left top;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="box2"></div>
+    <div class="box1"></div>
+    <h1>Heading 1</h1>
+    <h1 id="id1">Heading 2</h1>
+    <div class="parent">
+        <p>02</p>
+        <div>
+            <p>03</p>
+        </div>
+    </div>
+    <p>Sau parent</p>
+    <p>Sau parent</p> -->
+    <div class="box1">
+        <img class="image fill" src="https://image.plo.vn/w1000/Uploaded/2026/bpivppwi/2015_11_22/vietnamdeplonglayquaongkinhnugiangvientruongtunhien_XGLU.jpg.webp">
+    </div> 
+    <div class="box1">
+        <img class="image contain" src="https://image.plo.vn/w1000/Uploaded/2026/bpivppwi/2015_11_22/vietnamdeplonglayquaongkinhnugiangvientruongtunhien_XGLU.jpg.webp">
+    </div>
+    <div class="box1">
+        <img class="image cover" src="https://image.plo.vn/w1000/Uploaded/2026/bpivppwi/2015_11_22/vietnamdeplonglayquaongkinhnugiangvientruongtunhien_XGLU.jpg.webp">
+    </div>
+    <div class="box"> Hello world</div>
+</body>
+</html>
