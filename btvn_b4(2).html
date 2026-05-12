@@ -34,15 +34,15 @@
             background-color: grey;
             color: white;
         }
-        .lily-section > h2 {
+        .Julia-section > h2 {
             color: grey;
             font-size: 30px;
         }
-        .lily-image {
+        .Julia-image {
             display: flex;
             justify-content: center;
         }
-        .effect-lily {
+        .effect-Julia {
             margin: 0 5px;
             position: relative;
             overflow: hidden;
@@ -64,35 +64,48 @@
             left: 0;
             display: flex;
             flex-direction: column;
-            justify-content: end;
+            justify-content: start;
+            align-items: start;
             padding: 25px;
             color: white;
-            text-transform: uppercase;
+            /* text-transform: uppercase; */
             transition: 0.5s;
-            background-color: rgba(0, 51, 102, 0.3);
+            background-color: rgba(33, 34, 35, 0.2);
+            transition: background-color 0.2s ease;
         }
         .content h2 {
             font-weight: lighter;
-            font-size: 30px;
+            font-size: 35px;
         }
         h2 span {
             font-weight: bold;
         }
         .content p {
             opacity: 0;
-            transition: opacity 0.1s ease;
+            height: 40px;
+            width: 220px;
+            display: inline-block;
+            padding: 0 5px;
+            line-height: 40px;
+            color: black;
+            background-color: white;
+            font-size: 16px;
+            transform: translateX(-30px);
+            transition: opacity 0.5s ease;
+            margin: 3px 0;
+            transition: all 0.5s ease;
+            transition-delay: 0s;
         }
-        .effect-lily:hover p {
+        .effect-Julia:hover p {
             opacity: 1;
+            transform: translateX(0px);
+            transition-delay: calc(0.1s * var(--i));
         }
         .content:hover {
-            background-color: transparent;
+            background-color: rgba(19, 19, 19, 0.4);
         }
-        effect-lily:hover p, effect-lily:hover h2 {
-            transform: translateY(-50px);
-        }
-        .effect-lily:hover .image {
-            transform: translateX(0px) scale(1.05);
+        .effect-Julia:hover .image {
+            transform: scale(1.15);
         }
     </style>
 </head>
@@ -101,21 +114,25 @@
         <a href="https://didieu0807.github.io/web_basic/btvn_b4(1)">SET 1</a>
         <a href="">SET 2</a>
     </div>
-    <div class="lily-section">
-        <h2>Lily</h2>
-        <div class="lily-image">
-            <div class="effect-lily" style="width: 50%;">
-                <img class="image" src="https://tympanus.net/Development/HoverEffectIdeas/img/12.jpg" alt="lily-image">
+    <div class="Julia-section">
+        <h2>Julia</h2>
+        <div class="Julia-image">
+            <div class="effect-Julia" style="width: 50%;">
+                <img class="image" src="https://tympanus.net/Development/HoverEffectIdeas/img/21.jpg" alt="Julia-image">
                 <div class="content">
-                    <h2>NICE <span> LILY</span></h2>
-                    <p>Lily likes to play with crayons and pencils</p>
+                    <h2>PASSIONATE <span> JULIA</span></h2>
+                    <p style="--i: 1">Julia dances in the deep dark</p>
+                    <p style="--i: 2">She loves the smell of the ocean</p>
+                    <p style="--i: 3">And dives into the morning light</p>
                 </div>
             </div>
-            <div class="effect-lily" style="width: 50%;">
-                <img class="image" src="https://tympanus.net/Development/HoverEffectIdeas/img/1.jpg" alt="lily-image">
+            <div class="effect-Julia" style="width: 50%;">
+                <img class="image" src="https://tympanus.net/Development/HoverEffectIdeas/img/22.jpg" alt="Julia-image">
                 <div class="content">
-                    <h2>NICE <span> LILY</span></h2>
-                    <p>Lily likes to play with crayons and pencils</p>
+                    <h2>PASSIONATE <span> JULIA</span></h2>
+                    <p style="--i: 1">Julia dances in the deep dark</p>
+                    <p style="--i: 2">She loves the smell of the ocean</p>
+                    <p style="--i: 3">And dives into the morning light</p>
                 </div>
             </div>
         </div>
