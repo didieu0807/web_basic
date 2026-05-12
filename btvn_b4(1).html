@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #2f3238;
+            margin: 100px;
+        }
+        .button-section {
+            display: flex;
+            justify-content: center;
+        }
+        .button-section a {
+            height: 50px;
+            width: 70px;
+            background-color:#2f3238;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 6px;
+            font-size: 16px;
+            font-weight: bold;
+            color: blue;
+            text-decoration: none;
+            
+        }
+        a:hover {
+            background-color: grey;
+            color: white;
+        }
+        .lily-section > h2 {
+            color: grey;
+            font-size: 24px;
+        }
+        .lily-image {
+            display: flex;
+            justify-content: center;
+        }
+        .effect-lily {
+            margin: 0 5px;
+            position: relative;
+            overflow: hidden;
+        }
+        .image {
+            display: block;
+            width: calc(100% + 50px);
+            max-width: 400px;
+            max-width: none;
+            transform: translateX(-25px);
+            transition: transform 1s ease;
+        }
+        .content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            padding: 25px;
+            color: white;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-color: rgba(0, 51, 102, 0.3);
+        }
+        .content h2 {
+            font-weight: lighter;
+            font-size: 30px;
+        }
+        h2 span {
+            font-weight: bold;
+        }
+        .content p {
+            opacity: 0;
+            transition: opacity 0.1s ease;
+        }
+        .effect-lily:hover p {
+            opacity: 1;
+        }
+        .content:hover {
+            transform: translateY(-50px);
+            background-color: transparent;
+        }
+        .effect-lily:hover .image {
+            transform: translateX(0px);
+        }
+    </style>
+</head>
+<body>
+    <div class="button-section">
+        <a href="">SET 1</a>
+        <a href="">SET 2</a>
+    </div>
+    <div class="lily-section">
+        <h2>Lily</h2>
+        <div class="lily-image">
+            <div class="effect-lily" style="width: 50%;">
+                <img class="image" src="https://tympanus.net/Development/HoverEffectIdeas/img/12.jpg" alt="lily-image">
+                <div class="content">
+                    <h2>NICE <span> LILY</span></h2>
+                    <p>Lily likes to play with crayons and pencils</p>
+                </div>
+            </div>
+            <div class="effect-lily" style="width: 50%;">
+                <img class="image" src="https://tympanus.net/Development/HoverEffectIdeas/img/1.jpg" alt="lily-image">
+                <div class="content">
+                    <h2>NICE <span> LILY</span></h2>
+                    <p>Lily likes to play with crayons and pencils</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
