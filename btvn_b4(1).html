@@ -74,6 +74,8 @@
         .content h2 {
             font-weight: lighter;
             font-size: 30px;
+            transition: transform 0.5s ease;
+            margin: 5px 0;
         }
         h2 span {
             font-weight: bold;
@@ -81,6 +83,9 @@
         .content p {
             opacity: 0;
             transition: opacity 0.1s ease;
+            transition: transform 0.5s ease;
+            margin: 5px 0;
+            color:rgba(240, 255, 255, 0.888);
         }
         .effect-lily:hover p {
             opacity: 1;
@@ -88,7 +93,7 @@
         .content:hover {
             background-color: transparent;
         }
-        effect-lily:hover p, effect-lily:hover h2 {
+        .effect-lily:hover p, .effect-lily:hover h2 {
             transform: translateY(-50px);
         }
         .effect-lily:hover .image {
