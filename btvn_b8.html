@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+            margin-top: 30px;
+        }
+        .nhap-section {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+        }
+        .button-nhap {
+            padding: 10px;
+            margin: 2px 15px 2px 0;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+        input::placeholder {
+            color: rgba(241, 190, 96, 0.838);
+        }
+        #button-submit {
+            padding: 0 10px;
+            height: 122px;
+            border-radius: 10px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+        }
+        .box-section {
+            display: none;
+            position: relative;
+            margin: 50px auto 0 auto;
+            width: fit-content;
+        }
+        #box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        #width-index {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #height-index {
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nhap-section">
+            <input class="button-nhap" id="colorInput" type="text" placeholder="Vui lòng nhập mã màu">
+            <input class="button-nhap" id="widthInput" type="text" placeholder="Vui lòng nhập chiều ngang(w)">
+            <input class="button-nhap" id="heightInput" type="text"placeholder="Vui lòng nhập chiều dọc(h)">
+        </div>
+        <div class="submit-section">
+            <div id="button-submit">Submit</div>
+        </div>
+    </div>
+    <div class="box-section" id="box-section">
+        <div id="width-index">0px</div>
+        <div id="box"></div>
+        <div id="height-index">0px</div>
+    </div>
+    <script>
+        let colorInput = document.getElementById("colorInput");
+        let widthInput = document.getElementById("widthInput");
+        let heightInput = document.getElementById("heightInput");
+        let submitButton = document.getElementById("button-submit");
+        let widthIndex = document.getElementById("width-index");
+        let box = document.getElementById("box");
+        let heightIndex = document.getElementById("height-index");
+        let boxSection = document.getElementById("box-section");
+        submitButton.addEventListener('click', function(){
+            {
+            let colValue = colorInput.value;
+            let widthValue = widthInput.value;
+            let heightValue = heightInput.value;
+            if(!colValue || !widthValue || !heightValue){
+                alert("Vui lòng nhập đủ cả 3 ô mã màu, chiều ngang và chiều dọc!");
+                return;
+            }
+            box.style.width = widthValue + 'px';
+            box.style.height = heightValue + 'px';
+            if (!colValue.startsWith('#')) {
+                colValue = '#' + colValue;
+            }
+            box.style.backgroundColor = colValue;
+            box.textContent = colValue;
+
+            widthIndex.textContent = widthValue + 'px';
+            heightIndex.textContent = heightValue + 'px';
+            boxSection.style.display = 'block';
+        }
+        })
+        boxSection.addEventListener('click', function(){
+            colorInput.value = '';
+            widthInput.value = '';
+            heightValue.value = '';
+            boxSection.style.display = 'none';
+        })
+    </script>
+</body>
+</html>

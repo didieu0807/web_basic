@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">aaaaa</div>
+    <div class="box1">aaaaa</div>
+    <div class="box1">aaaaa</div>
+    <button>click me</button>
+    <!-- <script src="./style.js"></script> -->
+    <script> //dom
+        //trỏ tới 1 phần tử
+        let title1 = document.getElementById("div1");
+        let box1 = document.querySelector(".box1");
+        // let box1s = document.querySelectorALL(".box1");
+        let button = document.querySelector("button");
+        button.addEventListener('click', function(){
+            alert("Chào mn");
+            let a = box1.value;
+            console.log(a);
+        })
+        //ghi đè lên nội dung
+        title1.innerText = "hello";
+        title1.innerHTML = "<b> hi <b>";
+        box1.style.color = "red";
+
+
+    </script>
+</body>
+</html>
