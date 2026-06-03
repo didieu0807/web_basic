@@ -25,6 +25,7 @@
         input::placeholder {
             color: rgba(171, 111, 65, 0.838);
         }
+        
         #button-submit {
             padding: 0 10px;
             height: 122px;
@@ -97,9 +98,9 @@
             }
             box.style.width = widthValue + 'px';
             box.style.height = heightValue + 'px';
-            if (!colValue.startsWith('#')) {
-                colValue = '#' + colValue;
-            }
+            // if (!colValue.startsWith('#')) {
+            //     colValue = '#' + colValue;
+            // }
             box.style.backgroundColor = colValue;
             box.textContent = colValue;
 

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            font-size: 30px; 
+            margin-top: 50px;
+            display: inline-block;
+            border-bottom: 5px solid orangered;
+            padding-bottom: 5px;
+        }
+        .skills-button {
+            display: flex;
+            margin: 20px;
+        }
+        .core-skills, .other-skills {
+            flex: 1;
+        }
+        .box span {
+        font-size: 16px;
+        display: inline-flex;
+        border: 3px solid black;
+        padding: 15px;
+        margin: 5px;
+        border-radius: 50px;
+        }
+        .input-section {
+            display: flex;
+        }
+        .input-text {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .output-text {
+            margin-left: 10px;
+            padding: 0 5px;
+            height: 40px;
+            border: 3px solid black;
+            border-radius: 5px;
+            background-color: orangered;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="skills-button">
+                <div class="core-skills">
+                    <h2>CORE SKILLS</h2>
+                    <div class="input-section">
+                        <input class="input-text" id="input1" type="text" placeholder="Nhập dữ liệu vào">
+                        <div class="output-text" id="output1">Add</div>
+                    </div>
+                    <div class="box">
+                        <span>JavaScript</span>
+                        <span>Node.js</span>
+                        <span>Express.js</span>
+                        <span>MongoDB</span>
+                        <span>Vue.js</span>
+                        <span>React</span>
+                        <span>Sequelize</span>
+                        <span>Github</span>
+                        <span>HTML</span>
+                    </div>
+                    
+                </div>
+                <div class="other-skills">
+                    <h2>OTHER SKILLS</h2>
+                    <div class="input-section">
+                        <input class="input-text" id="input2" type="text" placeholder="Nhập dữ liệu vào">
+                        <div class="output-text" id="output2">Add</div>
+                    </div>
+                    <div class="box">
+                        <span>Storyblok</span>
+                        <span>PWAs</span>
+                        <span>Responsive Web Design</span>
+                        <span>React</span>
+                        <span>Vuetify</span>
+                    </div>
+                    
+                </div>
+    </div>
+    <script>
+        let inputText1 = document.getElementById('input1');
+        let inputText2 = document.getElementById('input2');
+        let outputText1 = document.getElementById('output1');
+        let outputText2 = document.getElementById('output2');
+        let container1 = document.querySelector('.core-skills .box');
+        let container2 = document.querySelector('.other-skills .box');
+
+        outputText1.addEventListener('click', function(){
+            let inputVal1 = inputText1.value;
+            container1.innerHTML += `
+                <span>${inputVal1}</span>
+            `;
+
+            inputText1.value = '';
+        })
+
+        outputText2.addEventListener('click', function(){
+            let inputVal2 = inputText2.value;
+            container2.innerHTML += `
+                <span>${inputVal2}</span>
+            `;
+
+            inputText2.value = '';
+        })
+    </script>
+    
+</body>
+</html>

@@ -108,6 +108,26 @@ h2 {
 .core-skills, .other-skills {
     flex: 1;
 }
+.input-section {
+    display: flex;
+}
+.input-text {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.output-text {
+    margin-left: 10px;
+    padding: 0 5px;
+    height: 40px;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: orangered;
+    line-height: 40px;
+}
+.output-text:hover {
+    cursor: pointer;
+}
 .paragraph {
     font-size: 24px;
     line-height: 1.5;
