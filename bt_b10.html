@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin-top: 0px;
+        }
+        .container {
+            position: relative;
+            width: 600px;
+            max-width: 600px;
+            margin: 0 auto;
+            
+        }
+        .box {
+            position: absolute;
+            background-color: black;
+            color: white;
+            width: 600px;
+            padding: 20px;
+            top: 0px;
+            left: 0px;
+            transition: opacity 0.6s ease, transform 0.5s ease;
+            z-index: 1;
+            transform: translateY(-100%); 
+            opacity: 0;
+        }
+        .box > div {
+            opacity: 0;
+            display: flex;
+            justify-content: start;
+            padding: 3px;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(-10px);
+        }
+        .button-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            z-index: 2;
+            opacity: 0;
+            color: white;
+            transition: 0.4s ease;
+        }
+        .active {
+            opacity: 1 !important;
+            transform: translateY(0);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="button-open">Menu</button>
+        <div class="drop-menu">
+            <div class="button-close">X</div>
+            <div class="box">
+            <div class="menu-item">Cửa hàng</div>
+            <div class="menu-item">Mac</div>
+            <div class="menu-item">Ipad</div>
+            <div class="menu-item">Iphone</div>
+            <div class="menu-item">Watch</div>
+            <div class="menu-item">Airpods</div>
+            <div class="menu-item">TV & Nhà</div>
+            <div class="menu-item">Giải trí</div>
+            <div class="menu-item">Phụ kiện</div>
+            <div class="menu-item">Hỗ trợ</div>
+        </div>
+        </div>
+        
+        
+    </div>
+    <script>
+        let buttonOpen = document.querySelector(".button-open");
+        let dropMenu = document.querySelector(".drop-menu");
+        let buttonClose = document.querySelector(".button-close");
+        let box = document.querySelector(".box");
+        let menuItems = document.querySelectorAll(".menu-item");
+        buttonOpen.addEventListener("click", function(){
+            box.classList.add("active");
+            menuItems.forEach(
+                function(div, index) {
+                    div.style.transitionDelay = `${index * 0.04}s`;
+                    div.classList.add("active");
+                }
+            )
+            buttonClose.classList.add("active");
+        })
+        buttonClose.addEventListener("click", function(){
+            box.classList.remove("active");
+            buttonClose.classList.remove("active");
+            menuItems.forEach(
+                function(div) {
+                    div.style.transitionDelay = "0s";
+                    div.classList.remove("active");
+                }
+            )
+        })
+    </script>
+    
+</body>
+</html>
