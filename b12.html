@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="wow.min.js">
+    </script>
+    <script>
+    wow = new WOW(
+        {
+        boxClass:     'wow',      // default
+        animateClass: 'animated', // default
+        offset:       0,          // default
+        mobile:       true,       // default
+        live:         true        // default
+    }
+    )
+    wow.init();
+    </script>
+    <link rel="stylesheet" type="text/css" href="./slick-1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="./slick-1.8.1/slick/slick-theme.css"/>
+    <style>
+        .box {
+            width: 100px;
+            height: 300px;
+            background-color: #e02828;
+            margin: 10px;
+            text-align: center;
+            line-height: 300px;
+        }
+        .slide {
+            width: 300px;
+            height: 200px;
+            background-color: #e02828;
+            margin: 10px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- animate_infinite: lặp lại vô hạn -->
+    <!-- <div class="animate__animated animate__bounce animate__delay-100s">Example</div> -->
+    <!-- <div class="box">
+        <div  class="wow animate__animated animate__zoomInUp">box1</div>
+    </div>
+    <div class="box">
+        <div class="wow animate__animated animate__zoomInUp">box2</div>
+    </div>
+    <div class="box">
+        <div class="wow animate__animated animate__zoomInUp">box3</div>
+    </div> -->
+    <div class="your-class">
+    <div class="slide">your content</div>
+    <div class="slide">your content</div>
+    <div class="slide">your content</div>
+    <div class="slide">your content</div>
+    <div class="slide">your content</div>
+  </div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="./slick-1.8.1/slick/slick.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.your-class').slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000
+      });
+    });
+  </script>
+</body>
+</html>
